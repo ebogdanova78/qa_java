@@ -1,6 +1,7 @@
 package com.example;
 
 import java.util.List;
+import com.example.Predator;
 
 public class Feline extends Animal implements Predator {
 
