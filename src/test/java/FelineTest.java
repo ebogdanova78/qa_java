@@ -51,7 +51,7 @@ public class FelineTest {
         }
 
         @Test
-        public void wrongGetFoodTest() throws Exception {
+        public void herbivoreGetFoodTest() throws Exception {
             List<String> expectedResult = List.of("Трава", "Различные растения");
             List<String> actualResult = feline.getFood("Травоядное");
             assertEquals("Получено неправильное значение", expectedResult, actualResult);

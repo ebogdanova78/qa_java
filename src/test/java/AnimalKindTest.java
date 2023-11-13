@@ -5,10 +5,10 @@ import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
 public class AnimalKindTest  {
-    private final String ANIMALKIND;
+    private final String animalKind;
 
     public AnimalKindTest (String animalKind) {
-        this.ANIMALKIND = animalKind;
+        this.animalKind = animalKind;
     }
 
     @Parameterized.Parameters
@@ -23,6 +23,6 @@ public class AnimalKindTest  {
     @Test(expected = Exception.class)
     public void getInvalidAnimalKind() throws Exception {
         Feline feline = new Feline();
-        feline.getFood(ANIMALKIND);
+        feline.getFood(animalKind);
     }
 }

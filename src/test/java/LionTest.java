@@ -2,6 +2,7 @@ import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -34,6 +35,7 @@ public class LionTest {
         assertEquals("Некорректный результат вызова метода getKittens", expectedResult, actualResult);
     }
 
+
     @Test
     public void lionDoesHaveManeTest() throws Exception {
         Lion lion = new Lion("Самец", feline);
@@ -48,8 +50,14 @@ public class LionTest {
         assertFalse("Некорректое значение свойства", actualResult);
     }
 
-    @Test(expected = Exception.class)
+    /*@Test(expected = Exception.class)
     public void lionDoesHaveUndefinedManeTest() throws Exception {
         new Lion("Undefined", feline);
+    }*/
+
+    @Test
+    public void lionDoesHaveUndefinedManeTest() {
+        assertThrows(Exception.class, () -> {new Lion("Undefined", feline);
+        });
     }
 }
